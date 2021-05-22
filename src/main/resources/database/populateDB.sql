@@ -1,0 +1,2 @@
+INSERT INTO exchange_rates VALUES
+(1, 'USD', 'RUB', '73.622599', '2021-05-22', '2021-05-22 05:00:00');

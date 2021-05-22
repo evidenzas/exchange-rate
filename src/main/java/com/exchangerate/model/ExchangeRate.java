@@ -1,14 +1,32 @@
 package com.exchangerate.model;
 
+import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "exchange_rates")
 public class ExchangeRate {
 
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
+
+    @Column(name = "currency_from")
     private String currencyFromCode;
+
+    @Column(name = "currency_to")
     private String currencyToCode;
-    private LocalDate exchangeRateDate;
+
+    @Column(name = "rate")
+    private BigDecimal rate;
+
+    @Column(name = "rate_date")
+    private LocalDate rateDate;
+
+    @Column(name = "updated_time")
     private LocalDateTime updateTime;
 
     public Integer getId() {
@@ -35,12 +53,20 @@ public class ExchangeRate {
         this.currencyToCode = currencyToCode;
     }
 
-    public LocalDate getExchangeRateDate() {
-        return exchangeRateDate;
+    public BigDecimal getRate() {
+        return rate;
     }
 
-    public void setExchangeRateDate(LocalDate exchangeRateDate) {
-        this.exchangeRateDate = exchangeRateDate;
+    public void setRate(BigDecimal rate) {
+        this.rate = rate;
+    }
+
+    public LocalDate getRateDate() {
+        return rateDate;
+    }
+
+    public void setRateDate(LocalDate rateDate) {
+        this.rateDate = rateDate;
     }
 
     public LocalDateTime getUpdateTime() {
