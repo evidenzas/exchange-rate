@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS exchange_rates;
 CREATE TABLE IF NOT EXISTS exchange_rates
 (
     id SERIAL PRIMARY KEY ,
@@ -7,5 +8,6 @@ CREATE TABLE IF NOT EXISTS exchange_rates
     rate_date DATE ,
     updated_time TIMESTAMP
 );
-CREATE SEQUENCE clients_id_seq INCREMENT BY 1;
--- DROP TABLE IF EXISTS exchange_rates
+-- CREATE SEQUENCE exchange_rates_id_seq INCREMENT BY 1;
+-- DROP TABLE IF EXISTS exchange_rates;
+-- DROP SEQUENCE IF EXISTS exchange_rates_id_seq;

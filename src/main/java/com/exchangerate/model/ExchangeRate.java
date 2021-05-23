@@ -1,5 +1,8 @@
 package com.exchangerate.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -11,70 +14,45 @@ public class ExchangeRate {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     private Integer id;
 
+    @Getter
+    @Setter
     @Column(name = "currency_from")
     private String currencyFromCode;
 
+    @Getter
+    @Setter
     @Column(name = "currency_to")
     private String currencyToCode;
 
+    @Getter
+    @Setter
     @Column(name = "rate")
     private BigDecimal rate;
 
+    @Getter
+    @Setter
     @Column(name = "rate_date")
     private LocalDate rateDate;
 
+    @Getter
+    @Setter
     @Column(name = "updated_time")
     private LocalDateTime updateTime;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
+    public ExchangeRate(Integer id, String currencyFromCode, String currencyToCode, BigDecimal rate, LocalDate rateDate, LocalDateTime updateTime) {
         this.id = id;
-    }
-
-    public String getCurrencyFromCode() {
-        return currencyFromCode;
-    }
-
-    public void setCurrencyFromCode(String currencyFromCode) {
         this.currencyFromCode = currencyFromCode;
-    }
-
-    public String getCurrencyToCode() {
-        return currencyToCode;
-    }
-
-    public void setCurrencyToCode(String currencyToCode) {
         this.currencyToCode = currencyToCode;
-    }
-
-    public BigDecimal getRate() {
-        return rate;
-    }
-
-    public void setRate(BigDecimal rate) {
         this.rate = rate;
-    }
-
-    public LocalDate getRateDate() {
-        return rateDate;
-    }
-
-    public void setRateDate(LocalDate rateDate) {
         this.rateDate = rateDate;
-    }
-
-    public LocalDateTime getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(LocalDateTime updateTime) {
         this.updateTime = updateTime;
     }
 
+    public ExchangeRate() {
+    }
 }

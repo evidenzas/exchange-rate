@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "cron.updateRatesPeriod",
+      "type": "java.lang.String",
+      "description": "Description for cron.updateRatesPeriod."
+    },
+    {
+      "name": "url.updateRatesApi",
+      "type": "java.lang.String",
+      "description": "Description for url.updateRatesApi."
+    }
+  ]
+}
